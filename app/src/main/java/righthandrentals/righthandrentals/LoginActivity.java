@@ -3,6 +3,8 @@ package righthandrentals.righthandrentals;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -38,6 +40,21 @@ import static android.Manifest.permission.READ_CONTACTS;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+
+
+    Button login_register = (Button) findViewById(R.id.login_register);
+
+    class ButtonListener implements OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.login_register:
+                    startActivity(new Intent(LoginActivity.this, PropertyActivity.class));
+                    break;
+            }
+        }
+    }
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -82,13 +99,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mEmailSignInButton = (Button) findViewById(R.id.login_register);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
             }
         });
+
+        ButtonListener  buttonListener = new ButtonListener();
+
+        login_register.setOnClickListener(buttonListener);
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
