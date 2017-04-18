@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     <TableLayout xmlns:android = "http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="righthandrentals.righthandrentals.PropertyActivity"
         >
 
+<<<<<<< HEAD
         <TableRow>
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -22,8 +27,18 @@
     android:layout_height="match_parent"
     tools:context="righthandrentals.righthandrentals.PropertyActivity">
 
+=======
+        <TableRow android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="385dp"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                android:elevation="0dp" />
+>>>>>>> origin/master
+
+            <android.support.v7.widget.Toolbar
         android:id="@+id/appBarLayout"
         android:layout_width="0dp"
         android:layout_height="56dp"
@@ -38,15 +53,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <TableLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:layout_editor_absoluteX="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -54,9 +65,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/master
 =======
 >>>>>>> parent of 9921fee... PropertyAction
+=======
+>>>>>>> origin/master
 
         </TableRow>
 
@@ -72,4 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </TableLayout>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
