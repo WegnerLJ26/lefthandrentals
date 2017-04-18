@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <TableLayout xmlns:android = "http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -15,6 +16,8 @@
                 android:background="?attr/colorPrimary"
                 android:elevation="0dp" />
 =======
+=======
+>>>>>>> parent of 9921fee... PropertyAction
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -53,7 +56,10 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 9921fee... PropertyAction
 
         </TableRow>
 
