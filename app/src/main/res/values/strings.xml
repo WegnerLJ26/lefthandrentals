@@ -15,5 +15,10 @@
     </string>
     <string name="title_activity_property">PropertyActivity</string>
 
+    <string name="properties_drawer_label">Properties</string>
+    <string name="calendar_drawer_label">Calendar</string>
+    <string name="maintenance_drawer_label">Maintenance</string>
+    <string name="settings_drawer_label">Settings</string>
+
 
 </resources>
