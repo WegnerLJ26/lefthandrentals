@@ -9,7 +9,7 @@
 
         <TableRow android:orientation="vertical">
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/appBarLayout"
                 android:layout_width= "385dp"
                 android:layout_height="match_parent"
                 android:background="?attr/colorPrimary"
