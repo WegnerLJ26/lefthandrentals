@@ -32,15 +32,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="righthandrentals.righthandrentals.LoginActivity" />
         </activity>
-        <activity
-            android:name=".SideMenu"
-            android:label="@string/title_activity_side_menu"
-            android:parentActivityName=".PropertyActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="righthandrentals.righthandrentals.PropertyActivity" />
-        </activity>
     </application>
 
 </manifest>
