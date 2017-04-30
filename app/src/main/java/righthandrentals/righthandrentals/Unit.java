@@ -73,4 +73,8 @@ public class Unit {
     public void setUnitPropertyId(int unit_property_id) {
         this.unit_property_id = this.unit_property_id;
     }
+
+    public int getUnitPropertyId() {
+        return unit_property_id;
+    }
 }
