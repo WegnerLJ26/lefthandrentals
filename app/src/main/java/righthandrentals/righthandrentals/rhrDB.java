@@ -280,242 +280,224 @@ public class rhrDB {
             onCreate(db);
         }
 
-        public long insertCompany(Company company) {
-            ContentValues cv = new ContentValues();
-            cv.put(COMPANY_ID, company.getId());
-            cv.put(COMPANY_NAME, company.getName());
-            cv.put(COMPANY_ADDRESS, company.getAddress());
-            cv.put(COMPANY_STATE, company.getState());
-            cv.put(COMPANY_CITY, company.getCity());
-            cv.put(COMPANY_ZIPCODE, company.getZipcode());
+        
+    }
 
-            /*
-            This is what should be working here, for some reason this.openWritableDB() is not recognized in this method
+    public long insertCompany(Company company) {
+        ContentValues cv = new ContentValues();
+        cv.put(COMPANY_ID, company.getId());
+        cv.put(COMPANY_NAME, company.getName());
+        cv.put(COMPANY_ADDRESS, company.getAddress());
+        cv.put(COMPANY_STATE, company.getState());
+        cv.put(COMPANY_CITY, company.getCity());
+        cv.put(COMPANY_ZIPCODE, company.getZipcode());
 
             this.openWritableDB();
             long companyId = db.insert(COMPANY_TABLE, null, cv);
             this.closeDB();
 
             return companyId;
-             */
-        }
 
-        public int updateCompany(Company company) {
-            ContentValues cv = new ContentValues();
-            cv.put(COMPANY_ID, company.getId());
-            cv.put(COMPANY_NAME, company.getName());
-            cv.put(COMPANY_ADDRESS, company.getAddress());
-            cv.put(COMPANY_STATE, company.getState());
-            cv.put(COMPANY_CITY, company.getCity());
-            cv.put(COMPANY_ZIPCODE, company.getZipcode());
+    }
 
-            String where = COMPANY_ID + "= ?";
-            String[] whereArgs = { String.valueOf(company.getId())};
+    public int updateCompany(Company company) {
+        ContentValues cv = new ContentValues();
+        cv.put(COMPANY_ID, company.getId());
+        cv.put(COMPANY_NAME, company.getName());
+        cv.put(COMPANY_ADDRESS, company.getAddress());
+        cv.put(COMPANY_STATE, company.getState());
+        cv.put(COMPANY_CITY, company.getCity());
+        cv.put(COMPANY_ZIPCODE, company.getZipcode());
 
-            this.openWritableDB();
-            int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
-            this.closeDB();
+        String where = COMPANY_ID + "= ?";
+        String[] whereArgs = { String.valueOf(company.getId())};
 
-            return rowCount;
-        }
+        this.openWritableDB();
+        int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
+        this.closeDB();
 
-        public long insertManager(Manager manager) {
-            ContentValues cv = new ContentValues();
-            cv.put(MANAGER_ID, manager.getId());
-            cv.put(MANAGER_FIRSTNAME, manager.getFirstname());
-            cv.put(MANAGER_LASTNAME, manager.getLastname());
+        return rowCount;
+    }
 
-            /*
-            This is what should be working here, for some reason this.openWritableDB() is not recognized in this method
+    public long insertManager(Manager manager) {
+        ContentValues cv = new ContentValues();
+        cv.put(MANAGER_ID, manager.getId());
+        cv.put(MANAGER_FIRSTNAME, manager.getFirstname());
+        cv.put(MANAGER_LASTNAME, manager.getLastname());
 
             this.openWritableDB();
             long managerId = db.insert(MANAGER_TABLE, null, cv);
             this.closeDB();
 
             return managerId;
-             */
-        }
 
-        public int updateManager(Manager manager) {
-            ContentValues cv = new ContentValues();
-            cv.put(MANAGER_ID, manager.getId());
-            cv.put(MANAGER_FIRSTNAME, manager.getFirstname());
-            cv.put(MANAGER_LASTNAME, manager.getLastname());
+    }
 
-            String where = MANAGER_ID + "= ?";
-            String[] whereArgs = { String.valueOf(manager.getId())};
+    public int updateManager(Manager manager) {
+        ContentValues cv = new ContentValues();
+        cv.put(MANAGER_ID, manager.getId());
+        cv.put(MANAGER_FIRSTNAME, manager.getFirstname());
+        cv.put(MANAGER_LASTNAME, manager.getLastname());
 
-            this.openWritableDB();
-            int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
-            this.closeDB();
+        String where = MANAGER_ID + "= ?";
+        String[] whereArgs = { String.valueOf(manager.getId())};
 
-            return rowCount;
-        }
+        this.openWritableDB();
+        int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
+        this.closeDB();
 
-        public long insertProperty(Property property) {
-            ContentValues cv = new ContentValues();
-            cv.put(PROPERTY_ID, property.getId());
-            cv.put(PROPERTY_ADDRESS, property.getAddress());
-            cv.put(PROPERTY_COMPANY_ID, property.getCId());
-            cv.put(PROPERTY_MANAGER_ID, property.getMId());
-            cv.put(PROPERTY_NUM_UNIT, property.getNumUnit());
-            cv.put(PROPERTY_NUM_EMPTY_UNITS, property.getNumEmptyUnit());
-            cv.put(PROPERTY_STATE, property.getState());
-            cv.put(PROPERTY_ZIPCODE, property.getZipcode());
-            cv.put(PROPERTY_CITY, property.getCity());
+        return rowCount;
+    }
 
-            /*
-            This is what should be working here, for some reason this.openWritableDB() is not recognized in this method
+    public long insertProperty(Property property) {
+        ContentValues cv = new ContentValues();
+        cv.put(PROPERTY_ID, property.getId());
+        cv.put(PROPERTY_ADDRESS, property.getAddress());
+        cv.put(PROPERTY_COMPANY_ID, property.getCId());
+        cv.put(PROPERTY_MANAGER_ID, property.getMId());
+        cv.put(PROPERTY_NUM_UNIT, property.getNumUnit());
+        cv.put(PROPERTY_NUM_EMPTY_UNITS, property.getNumEmptyUnit());
+        cv.put(PROPERTY_STATE, property.getState());
+        cv.put(PROPERTY_ZIPCODE, property.getZipcode());
+        cv.put(PROPERTY_CITY, property.getCity());
 
             this.openWritableDB();
-            long propertyID = db.insert(PROPERTY_TABLE, null, cv);
+            long propertyId = db.insert(PROPERTY_TABLE, null, cv);
             this.closeDB();
 
             return propertyId;
-             */
-        }
 
-        public int updateProperty(Property property) {
-            ContentValues cv = new ContentValues();
-            cv.put(PROPERTY_ID, property.getId());
-            cv.put(PROPERTY_ADDRESS, property.getAddress());
-            cv.put(PROPERTY_COMPANY_ID, property.getCId());
-            cv.put(PROPERTY_MANAGER_ID, property.getMId());
-            cv.put(PROPERTY_NUM_UNIT, property.getNumUnit());
-            cv.put(PROPERTY_NUM_EMPTY_UNITS, property.getNumEmptyUnit());
-            cv.put(PROPERTY_STATE, property.getState());
-            cv.put(PROPERTY_ZIPCODE, property.getZipcode());
-            cv.put(PROPERTY_CITY, property.getCity());
+    }
 
-            String where = PROPERTY_ID + "= ?";
-            String[] whereArgs = { String.valueOf(property.getId())};
+    public int updateProperty(Property property) {
+        ContentValues cv = new ContentValues();
+        cv.put(PROPERTY_ID, property.getId());
+        cv.put(PROPERTY_ADDRESS, property.getAddress());
+        cv.put(PROPERTY_COMPANY_ID, property.getCId());
+        cv.put(PROPERTY_MANAGER_ID, property.getMId());
+        cv.put(PROPERTY_NUM_UNIT, property.getNumUnit());
+        cv.put(PROPERTY_NUM_EMPTY_UNITS, property.getNumEmptyUnit());
+        cv.put(PROPERTY_STATE, property.getState());
+        cv.put(PROPERTY_ZIPCODE, property.getZipcode());
+        cv.put(PROPERTY_CITY, property.getCity());
 
-            this.openWritableDB();
-            int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
-            this.closeDB();
+        String where = PROPERTY_ID + "= ?";
+        String[] whereArgs = { String.valueOf(property.getId())};
 
-            return rowCount;
-        }
+        this.openWritableDB();
+        int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
+        this.closeDB();
 
-        public long insertTenant(Tenant tenant) {
-            ContentValues cv = new ContentValues();
-            cv.put(TENANT_ID, tenant.getId());
-            cv.put(TENANT_FIRSTNAME, tenant.getTenantsFirstname());
-            cv.put(TENANT_LASTNAME, tenant.getTenantsLastname());
-            cv.put(TENANT_EMAIL, tenant.getEmail());
-            cv.put(TENANT_PHONE, tenant.getPhone());
-            cv.put(TENANT_UNIT_ID, tenant.getTenantUnitId());
+        return rowCount;
+    }
 
-            /*
-            This is what should be working here, for some reason this.openWritableDB() is not recognized in this method
+    public long insertTenant(Tenant tenant) {
+        ContentValues cv = new ContentValues();
+        cv.put(TENANT_ID, tenant.getId());
+        cv.put(TENANT_FIRSTNAME, tenant.getTenantsFirstname());
+        cv.put(TENANT_LASTNAME, tenant.getTenantsLastname());
+        cv.put(TENANT_EMAIL, tenant.getEmail());
+        cv.put(TENANT_PHONE, tenant.getPhone());
+        cv.put(TENANT_UNIT_ID, tenant.getTenantUnitId());
 
             this.openWritableDB();
             long tenantID = db.insert(TENANT_TABLE, null, cv);
             this.closeDB();
 
             return tenantID;
-             */
-        }
 
-        public int updateTenant(Tenant tenant) {
-            ContentValues cv = new ContentValues();
-            cv.put(TENANT_ID, tenant.getId());
-            cv.put(TENANT_FIRSTNAME, tenant.getTenantsFirstname());
-            cv.put(TENANT_LASTNAME, tenant.getTenantsLastname());
-            cv.put(TENANT_EMAIL, tenant.getEmail());
-            cv.put(TENANT_PHONE, tenant.getPhone());
-            cv.put(TENANT_UNIT_ID, tenant.getTenantUnitId());
+    }
 
-            String where = TENANT_ID + "= ?";
-            String[] whereArgs = { String.valueOf(tenant.getId())};
+    public int updateTenant(Tenant tenant) {
+        ContentValues cv = new ContentValues();
+        cv.put(TENANT_ID, tenant.getId());
+        cv.put(TENANT_FIRSTNAME, tenant.getTenantsFirstname());
+        cv.put(TENANT_LASTNAME, tenant.getTenantsLastname());
+        cv.put(TENANT_EMAIL, tenant.getEmail());
+        cv.put(TENANT_PHONE, tenant.getPhone());
+        cv.put(TENANT_UNIT_ID, tenant.getTenantUnitId());
 
-            this.openWritableDB();
-            int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
-            this.closeDB();
+        String where = TENANT_ID + "= ?";
+        String[] whereArgs = { String.valueOf(tenant.getId())};
 
-            return rowCount;
-        }
+        this.openWritableDB();
+        int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
+        this.closeDB();
 
-        public long insertUnit(Unit unit) {
-            ContentValues cv = new ContentValues();
-            cv.put(UNIT_ID, unit.getId());
-            cv.put(UNIT_ROOMS, unit.getRooms());
-            cv.put(UNIT_BATHS, unit.getBaths());
-            cv.put(UNIT_MAX_OCCUPANTS, unit.getMaxOccupants());
-            cv.put(UNIT_PETS, unit.getPets());
-            cv.put(UNIT_PRICE_MONTHLY, unit.getUnitPriceMonthly());
-            cv.put(UNIT_PROPERTY_ID, unit.getUnitPropertyId());
+        return rowCount;
+    }
 
-            /*
-            This is what should be working here, for some reason this.openWritableDB() is not recognized in this method
+    public long insertUnit(Unit unit) {
+        ContentValues cv = new ContentValues();
+        cv.put(UNIT_ID, unit.getId());
+        cv.put(UNIT_ROOMS, unit.getRooms());
+        cv.put(UNIT_BATHS, unit.getBaths());
+        cv.put(UNIT_MAX_OCCUPANTS, unit.getMaxOccupants());
+        cv.put(UNIT_PETS, unit.getPets());
+        cv.put(UNIT_PRICE_MONTHLY, unit.getUnitPriceMonthly());
+        cv.put(UNIT_PROPERTY_ID, unit.getUnitPropertyId());
+
+
+
 
             this.openWritableDB();
             long unitID = db.insert(UNIT_TABLE, null, cv);
             this.closeDB();
 
             return unitID;
-             */
-        }
 
-        public int updateUnit(Unit unit) {
-            ContentValues cv = new ContentValues();
-            cv.put(UNIT_ID, unit.getId());
-            cv.put(UNIT_ROOMS, unit.getRooms());
-            cv.put(UNIT_BATHS, unit.getBaths());
-            cv.put(UNIT_MAX_OCCUPANTS, unit.getMaxOccupants());
-            cv.put(UNIT_PETS, unit.getPets());
-            cv.put(UNIT_PRICE_MONTHLY, unit.getUnitPriceMonthly());
-            cv.put(UNIT_PROPERTY_ID, unit.getUnitPropertyId());
+    }
 
-            String where = UNIT_ID + "= ?";
-            String[] whereArgs = { String.valueOf(unit.getId())};
+    public int updateUnit(Unit unit) {
+        ContentValues cv = new ContentValues();
+        cv.put(UNIT_ID, unit.getId());
+        cv.put(UNIT_ROOMS, unit.getRooms());
+        cv.put(UNIT_BATHS, unit.getBaths());
+        cv.put(UNIT_MAX_OCCUPANTS, unit.getMaxOccupants());
+        cv.put(UNIT_PETS, unit.getPets());
+        cv.put(UNIT_PRICE_MONTHLY, unit.getUnitPriceMonthly());
+        cv.put(UNIT_PROPERTY_ID, unit.getUnitPropertyId());
 
-            this.openWritableDB();
-            int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
-            this.closeDB();
+        String where = UNIT_ID + "= ?";
+        String[] whereArgs = { String.valueOf(unit.getId())};
 
-            return rowCount;
-        }
+        this.openWritableDB();
+        int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
+        this.closeDB();
 
-        public long insertUser(User user) {
-            ContentValues cv = new ContentValues();
-            cv.put(USER_ID, user.getUserId());
-            cv.put(USER_NAME, user.getUserName());
-            cv.put(USER_PASSWORD, user.getUserPassword());
-            cv.put(USER_ACCOUNT_TYPE, user.getUserAccountType());
+        return rowCount;
+    }
 
-            /*
-            This is what should be working here, for some reason this.openWritableDB() is not recognized in this method
+    public long insertUser(User user) {
+        ContentValues cv = new ContentValues();
+        cv.put(USER_ID, user.getUserId());
+        cv.put(USER_NAME, user.getUserName());
+        cv.put(USER_PASSWORD, user.getUserPassword());
+        cv.put(USER_ACCOUNT_TYPE, user.getUserAccountType());
 
-            this.openWritableDB();
-            long userID = db.insert(USER_TABLE, null, cv);
-            this.closeDB();
+        this.openWritableDB();
+        long userID = db.insert(USER_TABLE, null, cv);
+        this.closeDB();
 
-            return userID;
-             */
-        }
+        return userID;
 
-        public int updateUser(User user) {
-            ContentValues cv = new ContentValues();
-            cv.put(USER_ID, user.getUserId());
-            cv.put(USER_NAME, user.getUserName());
-            cv.put(USER_PASSWORD, user.getUserPassword());
-            cv.put(USER_ACCOUNT_TYPE, user.getUserAccountType());
+    }
 
-            String where = USER_ID + "= ?";
-            String[] whereArgs = { String.valueOf(user.getUserId())};
+    public int updateUser(User user) {
+        ContentValues cv = new ContentValues();
+        cv.put(USER_ID, user.getUserId());
+        cv.put(USER_NAME, user.getUserName());
+        cv.put(USER_PASSWORD, user.getUserPassword());
+        cv.put(USER_ACCOUNT_TYPE, user.getUserAccountType());
 
-            this.openWritableDB();
-            int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
-            this.closeDB();
+        String where = USER_ID + "= ?";
+        String[] whereArgs = { String.valueOf(user.getUserId())};
 
-            return rowCount;
-        }
+        this.openWritableDB();
+        int rowCount = db.update(COMPANY_TABLE, cv, where, whereArgs);
+        this.closeDB();
 
-
-
-
-        //Here we will do the statements to pull data from our database (pg. 447)
+        return rowCount;
     }
 
 
