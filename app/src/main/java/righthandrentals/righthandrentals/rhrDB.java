@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class rhrDB {
 
     // db constants
@@ -279,9 +281,15 @@ public class rhrDB {
             db.execSQL(rhrDB.DROP_MANAGER_TABLE);
             onCreate(db);
         }
-
-        
     }
+
+    /*public ArrayList<Company> getCompany(String companyName) {
+        String where =
+                COMPANY_ID + "= ?";
+
+    }*/
+
+
 
     public long insertCompany(Company company) {
         ContentValues cv = new ContentValues();
