@@ -2,18 +2,22 @@ package righthandrentals.righthandrentals;
 
 public class Manager {
 
+    //columns in the Manager table
     private int manager_id;
     private String manager_firstname;
     private String manager_lastname;
 
+    //constructor
     public Manager () {};
 
+    //constructor w/ args
     public Manager(int manager_id, String manager_firstname, String manager_lastname){
         this.manager_id = manager_id;
         this.manager_firstname = manager_firstname;
         this.manager_lastname = manager_lastname;
     }
 
+    //setters and getters
     public void setId(int manager_id) {
         this.manager_id = manager_id;
     }

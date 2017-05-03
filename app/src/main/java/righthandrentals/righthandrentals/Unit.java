@@ -2,6 +2,7 @@ package righthandrentals.righthandrentals;
 
 public class Unit {
 
+    //columns in the Unit table
     private int unit_id;
     private int unit_rooms;
     private int unit_baths;
@@ -10,8 +11,10 @@ public class Unit {
     private int unit_price_monthly;
     private int unit_property_id;
 
+    //constructor
     public Unit() {};
 
+    //constructor w/ args
     public Unit(int unit_id, int unit_rooms, int unit_baths, int unit_max_occupants, String unit_pets, int unit_price_monthly, int unit_property_id){
         this.unit_id = unit_id;
         this.unit_rooms = unit_rooms;
@@ -22,6 +25,7 @@ public class Unit {
         this.unit_property_id = unit_property_id;
     }
 
+    //setters and getters
     public void setId(int unit_id) {
         this.unit_id = unit_id;
     }

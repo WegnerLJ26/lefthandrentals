@@ -2,6 +2,7 @@ package righthandrentals.righthandrentals;
 
 public class Tenant {
 
+    //columns in the Tenant table
     private int tenant_id;
     private String tenant_firstname;
     private String tenant_lastname;
@@ -9,8 +10,10 @@ public class Tenant {
     private String tenant_phone;
     private int tenant_unit_id;
 
+    //constructor
     public Tenant() {};
 
+    //constructor with args
     public Tenant(int tenant_id, String tenant_firstname, String tenant_lastname, String tenant_email, String tenant_phone, int tenant_unit_id) {
         this.tenant_id = tenant_id;
         this.tenant_firstname = tenant_firstname;
@@ -20,6 +23,7 @@ public class Tenant {
         this.tenant_unit_id = tenant_unit_id;
     }
 
+    //setters and getters
     public void setId(int tenant_id){
         this.tenant_id = tenant_id;
     }

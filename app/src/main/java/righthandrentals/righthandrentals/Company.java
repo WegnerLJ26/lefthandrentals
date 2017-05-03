@@ -2,6 +2,7 @@ package righthandrentals.righthandrentals;
 
 public class Company {
 
+    //columns in the Company table
     private int company_id;
     private String company_name;
     private String company_address;
@@ -9,8 +10,10 @@ public class Company {
     private String company_city;
     private int company_zipcode;
 
+    //constructor
     public Company() {};
 
+    //constructor w/ args
     public Company(int company_id, String company_name, String company_address, String company_state, String company_city, int company_zipcode) {
         this.company_id = company_id;
         this.company_name = company_name;
@@ -20,6 +23,7 @@ public class Company {
         this.company_zipcode = company_zipcode;
     }
 
+    //setters and getters
    public void setId(int company_id) {
        this.company_id = company_id;
    }

@@ -2,6 +2,7 @@ package righthandrentals.righthandrentals;
 
 public class Property {
 
+    //columns in the Property table
     private int property_id;
     private String property_address;
     private int property_company_id;
@@ -12,8 +13,10 @@ public class Property {
     private int property_zipcode;
     private String property_city;
 
+    //constructor
     public Property() {};
 
+    //constructor w/ args
     public Property(int property_id, String property_address, int property_company_id, int property_manager_id, int property_num_unit, int property_num_empty_units, String property_state, int property_zipcode, String property_city) {
         this.property_id = property_id;
         this.property_address = property_address;
@@ -26,6 +29,7 @@ public class Property {
         this.property_city = property_city;
     }
 
+    //setters and getters
     public void setId(int property_id) {
         this.property_id = property_id;
     }

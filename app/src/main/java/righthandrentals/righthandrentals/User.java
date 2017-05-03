@@ -2,13 +2,16 @@ package righthandrentals.righthandrentals;
 
 public class User {
 
+    //columns in the User table
     private int user_id;
     private String user_name;
     private String user_password;
     private int user_account_type;
 
+    //constructor
     public User() {};
 
+    //constructor w/ args
     public User(int user_id, String user_name, String user_password, int user_account_type) {
         this.user_id = user_id;
         this.user_name = user_name;
@@ -16,6 +19,7 @@ public class User {
         this.user_account_type = user_account_type;
     }
 
+    //setters and getters
     public void setUserId(int user_id) {
         this.user_id = user_id;
     }

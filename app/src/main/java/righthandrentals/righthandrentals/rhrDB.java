@@ -11,6 +11,10 @@ import java.util.ArrayList;
 
 public class rhrDB {
 
+    /* This database was always intended to be a backup. If possible use the RHR's other database */
+
+
+
     // db constants
     public static final String DB_NAME = "rhr.db";
     public static final int DB_VERSION = 1;
@@ -229,6 +233,8 @@ public class rhrDB {
                     MANAGER_PHONE + " TEXT NOT NULL, " +
                     MANAGER_COMPANYID + " INTEGER NOT NULL;)";
 
+
+    /* These DROP methods were created as an easy means to fully empty a table */
     public static final String DROP_USER_TABLE =
             "DROP TABLE IF EXISTS " + UNIT_TABLE;
 
@@ -283,14 +289,10 @@ public class rhrDB {
         }
     }
 
-    /*public ArrayList<Company> getCompany(String companyName) {
-        String where =
-                COMPANY_ID + "= ?";
-
-    }*/
+    /* Here is where you write your procedures to query the database */
 
 
-
+    /* The insert and update methods that follow deal with adding and altering table entries */
     public long insertCompany(Company company) {
         ContentValues cv = new ContentValues();
         cv.put(COMPANY_ID, company.getId());
